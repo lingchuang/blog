@@ -1,0 +1,53 @@
+<div class="w-300 bg-000000 c-ffffff fr">
+    <div class="ph_news">
+        <h2>
+            <p>最新文章</p>
+        </h2>
+        <ul class="ph_n" id="recent10" style="min-height:50px;"></ul>
+        <h2>
+            <p class="bg-b0e516">点击排行</p>
+        </h2>
+        <ul class="ph_n" id="view10" style="min-height:50px;"></ul>
+    </div>
+</div>
+<script type="text/javascript">
+	initTop10();
+
+	function initTop10 () {
+		//最新文章
+		$.post('/blog/func/app/initTop.php',{ type : 1 },function(res){
+			res = eval(res);
+			var liHtml = '';
+			for(var i = 0;i < res.length;i ++){
+				var tempResultObj = res[i];
+				if(i < 3){
+					var cla = 'num' + Number(i + 1);
+					liHtml += '<li><span class="'+ cla +'">'+ Number(i + 1) +'</span><a href="/blog/article/details.html?articleId='+ tempResultObj.id +'" target="_blank"> '+ tempResultObj.articleTitle +' </a></li>';
+				}
+				else{
+					liHtml += '<li><span>'+ Number(i + 1) +'</span><a href="/blog/article/details.html?articleId='+ tempResultObj.id +'" target="_blank">'+ tempResultObj.articleTitle +'</a></li>';
+				}
+			}
+			$('#recent10').append(liHtml);
+		});
+		
+		//点击排行
+		$.post('/blog/func/app/initTop.php',{ type : 2 },function(res){
+			res = eval(res);
+			var liHtml = '';
+			for(var i = 0;i < res.length;i ++){
+				var tempResultObj = res[i];
+				if(i < 3){
+					var cla = 'num' + Number(i + 1);
+					liHtml += '<li><span class="'+ cla +'">'+ Number(i + 1) +'</span><a href="/blog/article/details.html?articleId='+ tempResultObj.id +'" target="_blank"> '+ tempResultObj.articleTitle +' </a></li>';
+				}
+				else{
+					liHtml += '<li><span>'+ Number(i + 1) +'</span><a href="/blog/article/details.html?articleId='+ tempResultObj.id +'" target="_blank">'+ tempResultObj.articleTitle +'</a></li>';
+				}
+			}
+			$('#view10').append(liHtml);
+			$('loading').empty();
+		});
+	}
+	
+</script>

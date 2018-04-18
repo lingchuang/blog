@@ -1,0 +1,8 @@
+.pointer{cursor:pointer;}
+.clear:after {content: '';display: block;clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+table tr td{text-align: center!important;}
+.none{display: none;}
+.table-layout-fixed{table-layout: fixed;}
+.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;}

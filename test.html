@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div style="height:500px;border:1px solid red;" id="box">
+		<h1 style="margin-top:150px;position:relative;left:300px;transition:0.5s ease;">hello world</h1>
+	</div>
+	<div style="height:1000px"></div>
+</body>
+</html>
+<script type="text/javascript" src="js/lib/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="/blog/layer/layer.js"></script>
+<script type="text/javascript">
+	$(window).scroll(function(){
+		var scrollTop = $(window).scrollTop();
+		if(scrollTop > 50 && scrollTop < 200){
+			$('h1').css('left','100px');
+		}
+		if(scrollTop > 200){
+			$('h1').css('left','300px');
+		}
+	});
+</script>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+		<link rel="stylesheet" href="css/app/base.css" />
+		<link rel="stylesheet" href="css/app/app.css" />
+		<link rel="stylesheet" href="css/lib/template.css" />
+	</head>
+	<body>
+		<loading></loading>
+		<div class="wraper">
+			<header id="header"></header>
+			<div class="banner">
+				<div id="loveHeart">
+					<canvas id="garden"></canvas>
+					<div id="words">
+						<div id="messages">
+							We together
+							<div id="elapseClock"></div>
+						</div>
+						<div id="loveu">
+							Love u forever and ever.<br/>
+							<div class="signature">- Mr.C&Mrs.C</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap" style="display:none;">
+				<div class="photowall">
+					<ul class="wall_a">
+						<li>
+							<a href="/">
+								<img src="images/p01.jpg">
+								<figcaption>
+									<h2>不再因为别人过得好而焦虑，在没有人看得到你的时候依旧能保持节奏 </h2>
+								</figcaption>
+							</a>
+						</li>
+						<li><a href="/"><img src="images/p02.jpg">
+							<figcaption>
+								<h2>不再因为别人过得好而焦虑，在没有人看得到你的时候依旧能保持节奏 </h2>
+							</figcaption>
+						</a></li>
+						<li><a href="/"><img src="images/p03.jpg">
+							<figcaption>
+								<h2>不再因为别人过得好而焦虑，在没有人看得到你的时候依旧能保持节奏 </h2>
+							</figcaption>
+						</a></li>
+						<li>
+							<p class="text_a"><a href="/">一个人最好的模样大概是平静一点，坦然接受自己所有的弱点，不再因为别人过得好而焦虑，在没有人看得到你的时候依旧能保持节奏......</a></p>
+						</li>
+					</ul>
+					<ul class="wall_a">
+						<li><a href="/"><img src="images/p04.jpg">
+							<figcaption>
+								<h2>不再因为别人过得好而焦虑，在没有人看得到你的时候依旧能保持节奏 </h2>
+							</figcaption>
+						</a></li>
+						<li>
+							<p class="text_b"><a href="/">逃避自己的人，最终只能导致自己世界的崩塌，而变得越来越没有安全感。</a></p>
+						</li>
+						<li><a href="/"><img src="images/p05.jpg">
+							<figcaption>
+								<h2>不再因为别人过得好而焦虑，在没有人看得到你的时候依旧能保持节奏 </h2>
+							</figcaption>
+						</a></li>
+						<li><a href="/"><img src="images/p06.jpg">
+							<figcaption>
+								<h2>不再因为别人过得好而焦虑，在没有人看得到你的时候依旧能保持节奏 </h2>
+							</figcaption>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="about" style="display:none;">
+				<ul>
+					<div id="fountainG">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</div>
+					<div class="about_girl"><span><img src="images/girl.jpg"></span>
+						<p>他的幽默，他往日的深情、承诺和傻劲儿，两个人共度的美丽时刻，一一印在我的回忆里....</p>
+					</div>
+					<div class="about_boy"><span><img src="images/boy.jpg"></span>
+						<p>她的热情，她腼腆的微笑、可爱和气质，两个人共度的愉快时刻，一一印在我的回忆里...</p>
+					</div>
+				</ul>
+			</div>
+			<div class="wrap">
+				<div class="cont-info clear">
+					<img class="cont-info-heart" src="images/index/blog_heart.png" />
+					<div class="cont-info-boy fl">
+						<div class="avatar avatar_boy pointer">
+							<span>~君~</span>
+						</div>
+						<h5>Mr.C</h5>
+						<p>因为未来谁也无法预料，总担心未来会怎样，只是庸人自扰，我们活在现在，就应该为现在实实在在的生活或者学习努力。不为模糊不清的未来担心，只为清清楚楚的现在努力。</p>
+					</div>
+					<div class="cont-info-girl fr">
+						<div class="avatar avatar_girl pointer">
+							<span>~思~</span>
+						</div>
+						<h5>Mrs.C</h5>
+						<p>因为未来谁也无法预料，总担心未来会怎样，只是庸人自扰，我们活在现在，就应该为现在实实在在的生活或者学习努力。不为模糊不清的未来担心，只为清清楚楚的现在努力。</p>
+					</div>
+				</div>
+				<div class="cont-article clear">
+					<div class="cont-article-line">&nbsp;</div>
+					<div class="cont-article-boy fl">
+						<ul class="cont-article-list" id="cont-article-list-boy" style="display: none;">
+						</ul>
+					</div>
+					<div class="cont-article-girl fr">
+						<ul class="cont-article-list" id="cont-article-list-girl" style="display: none;">
+						</ul>
+					</div>
+					<script type="text/x-handlebars-template" id="cont-article-list-tp">
+							{{#each this}}
+							<li>
+								<div class="cont-timeline-img">
+									<i class="iconfont icon-img-icon"></i>
+								</div>
+								<a href="/blog/article/details.html?articleId={{ id }}" target="_blank">
+								<h2>{{ articleTitle }}</h2>
+								<div class="overflow">
+									<img src="{{ articleImgLink }}" />
+								</div>
+								<p>{{ articleDesc }}</p>
+								</a>
+								<div class="cont-article-info">
+									<span class="cont-article-time">
+										<i class="iconfont info-icon">&#xe600;</i>
+										{{ publishTime }}
+									</span>
+									<span class="cont-article-author">
+										<i class="iconfont info-icon">&#xe603;</i>
+										{{ articleAuthor }}
+									</span>
+									<span class="cont-article-tag">
+										<i class="iconfont info-icon">&#xe602;</i>
+										【<a href="/blog/article/gossip.html?articleTag={{ articleTag }}" target="_blank" class="c-759b08">{{ articleTag }}
+										</a>】
+									</span>
+								</div>
+							</li>
+							{{/each}}
+						</script>
+				</div>
+			</div>
+			<footer id="footer"></footer>
+		</div>
+		<div id="totop">
+			<i class="iconfont icon-xiangshang"></i>
+			<span class="block rel t--15">TOP</span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/lib/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/lib/garden.js"></script>
+<script type="text/javascript" src="js/lib/functions.js"></script>
+<script type="text/javascript" src="/blog/js/lib/handlebars-v4.0.11.js"></script>
+
+<script type="text/javascript" src="js/app/base.js"></script>
+<script type="text/javascript" src="js/app/index.js"></script>

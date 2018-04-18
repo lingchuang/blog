@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+		<link rel="stylesheet" href="/blog/css/app/base.css" />
+		<link rel="stylesheet" href="/blog/css/app/app.css" />
+		<link rel="stylesheet" href="/blog/css/lib/template.css" />
+		<link rel="stylesheet" type="text/css" href="/blog/manage/css/lib/editormd.css"/>
+	</head>
+	<body>
+		<loading></loading>
+		<div class="wraper">
+			<header id="header"></header>
+			<div class="wrap m-t-105 clear m-h-400">
+				<div class="w-880 fl bg-ffffff" id="showBody" style="min-height:600px;">
+					<div class="weiZhi">
+						<span>当前位置：</span>
+						&nbsp;
+						<a href="/blog/index.html">首页</a>
+						<span style="display:none;">></span>
+						<a href="javascript:;" id="articleTag"></a>
+						<span style="display:none;">></span>
+						<span id="articleTitleNav"></span>
+					</div>
+					<div class="article_Details">
+						<h2 id="articleTitle" style="height:33px;"></h2>
+						<div class="article_Author">
+							<span>发布时间：<span id="publishTime"></span></span>
+							<span class="p-0-15">作者：<span id="articleAuthor"></span></span>
+							<span>历史阅读：<span id="viewCount"></span></span>
+						</div>
+						<p class="article_Details_Content markdown-body editormd-preview-container p-0" id="articleContent" style="overflow:visible;"></p>
+					</div>
+				</div>
+				<aside data-aside="asideOthers"></aside>
+			</div>
+			<footer id="footer" class="m-t-20"></footer>
+		</div>
+		<div id="totop">
+			<i class="iconfont icon-xiangshang"></i>
+			<span class="block rel t--15">TOP</span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="/blog/js/lib/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="/blog/layer/layer.js"></script>
+<script type="text/javascript" src="/blog/js/app/base.js"></script>
+<script type="text/javascript" src="/blog/js/app/details.js"></script>

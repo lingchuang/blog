@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="css/colorpicker.css" />
+        <link rel="stylesheet" href="css/datepicker.css" />
+		<link rel="stylesheet" href="css/uniform.css" />
+		<link rel="stylesheet" href="css/select2.css" />	
+		<link rel="stylesheet" href="css/unicorn.main.css" />
+		<link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" />
+		
+		<link rel="stylesheet" type="text/css" href="/blog/manage/css/lib/editormd.css"/>
+		<link rel="stylesheet" href="/blog/manage/css/app/base.css"/>	
+		<link rel="stylesheet" href="/blog/manage/css/app/app.css"/>
+		<style type="text/css">
+			.emoji{position: relative;top: -2px!important;}
+		</style>
+	</head>
+	<body style="display:none;">
+		<aside></aside>
+		<div id="content">
+			<div id="content-header">
+				<h1>文章管理</h1>
+			</div>
+			<div id="breadcrumb">
+				<a href="javascript:;" title="Go to Home" class="tip-bottom">
+					<i class="icon-home"></i> 
+					系统首页
+				</a>
+				<a href="javascript:;" class="tip-bottom">文章管理</a>
+				<a href="javascript:;" class="current">新增文章</a>
+			</div>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+								<h5>文章</h5>
+							</div>
+							<div class="widget-content nopadding">
+								<form action="#" method="get" class="form-horizontal" />
+									<div class="control-group">
+										<label class="control-label">标题：</label>
+										<div class="controls">
+											<input type="text" placeholder="请输入文章标题" name="articleTitle"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">封面图片链接：</label>
+										<div class="controls">
+											<input type="text" placeholder="请粘贴封面图片链接" name="articleImgLink"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">摘要：</label>
+										<div class="controls">
+											<textarea name="articleDesc" rows="8"></textarea>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">正文：</label>
+										<div class="controls">
+											<div id="editormd" style="z-index:20;">
+								                <textarea style="display:none;"></textarea>
+								           </div>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">标签：</label>
+										<div class="controls">
+											<select id="tagsSel"></select>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">是否推荐到首页：</label>
+										<div class="controls clear" id="recommendBox">
+											<label class="pointer fl m-t-6">
+												<input type="radio" name="radios" id = "recommend" data-type = "recommend" checked="true"/>是
+											</label>
+											<label class="pointer fl m-l-10 m-t-6">
+												<input type="radio" name="radios" id = "noRecommend" data-type = "recommend"/>否
+											</label>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">是否显示：</label>
+										<div class="controls clear" id="isShowBox">
+											<label class="pointer fl m-t-6">
+												<input type="radio" name="radios2" id = "show" data-type = "isShow" checked="true"/>是
+											</label>
+											<label class="pointer fl m-l-10 m-t-6">
+												<input type="radio" name="radios2" id = "hide" data-type = "isShow"/>否
+											</label>
+										</div>
+									</div>
+									<div class="form-actions">
+										<a href="javascript:;" class="btn btn-primary" name="save">保 存</a>
+									</div>
+								</form>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="/blog/manage/js/lib/jquery.min.js"></script>
+<script src="/blog/manage/js/lib/jquery.uniform.js"></script>
+<script src="/blog/manage/js/lib/select2.min.js"></script>
+<script src="/blog/manage/js/lib/unicorn.form_common.js"></script>
+<script type="text/javascript" src="/blog/layer/layer.js"></script>
+
+<script src="/blog/manage/js/lib/editormd.min.js"></script>
+<script src="/blog/manage/js/app/base.js"></script>
+<script src="/blog/manage/js/app/editArticle.js"></script>

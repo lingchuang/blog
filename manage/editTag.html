@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="css/colorpicker.css" />
+        <link rel="stylesheet" href="css/datepicker.css" />
+		<link rel="stylesheet" href="css/uniform.css" />
+		<link rel="stylesheet" href="css/select2.css" />		
+		<link rel="stylesheet" href="css/unicorn.main.css" />
+		<link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" />
+
+		<link rel="stylesheet" href="/blog/manage/css/app/base.css"/>	
+		<link rel="stylesheet" href="/blog/manage/css/app/app.css"/>
+	</head>
+	<body style="display:none;">
+		<aside></aside>
+		<div id="content">
+			<div id="content-header">
+				<h1>标签管理</h1>
+			</div>
+			<div id="breadcrumb">
+				<a href="javascript:;" class="tip-bottom">
+					<i class="icon-home"></i> 
+					系统首页
+				</a>
+				<a href="javascript:;" class="tip-bottom">标签管理</a>
+				<a href="javascript:;" class="current">新增标签</a>
+			</div>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-tag"></i>									
+								</span>
+								<h5>标签</h5>
+							</div>
+							<div class="widget-content nopadding">
+								<form action="#" method="get" class="form-horizontal" />
+									<div class="control-group">
+										<label class="control-label">标签：</label>
+										<div class="controls">
+											<input type="text" placeholder="请输入标签名" name="tagName"/>
+										</div>
+									</div>
+									<div class="form-actions">
+										<a href="javascript:;" class="btn btn-primary" name="save">保 存</a>
+									</div>
+								</form>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="/blog/manage/js/lib/jquery.min.js"></script>
+<script src="/blog/manage/js/lib/jquery.uniform.js"></script>
+<script src="/blog/manage/js/lib/select2.min.js"></script>
+<script src="/blog/manage/js/lib/unicorn.form_common.js"></script>
+<script type="text/javascript" src="/blog/layer/layer.js"></script>
+
+<script src="/blog/manage/js/app/base.js"></script>
+<script src="/blog/manage/js/app/editTag.js"></script>

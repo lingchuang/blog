@@ -1,0 +1,116 @@
+<div id="header">
+	<h1></h1>	
+</div>
+<div id="user-nav" class="navbar navbar-inverse">
+    <ul class="nav btn-group">
+        <li class="btn btn-inverse">
+        	<a title="" href="javascript:;">
+        		<i class="icon icon-user"></i> 
+        		<span class="text" id="userName"></span>
+    		</a>
+		</li>
+		<li class="btn btn-inverse">
+        	<a title="" href="/blog/index.html" target="_blank">
+        		<i class="icon icon-home"></i> 
+        		<span class="text">前端首页</span>
+    		</a>
+		</li>
+        <li class="btn btn-inverse">
+        	<a title="" href="javascript:;" name="outLogin">
+        		<i class="icon icon-share-alt"></i> 
+        		<span class="text">退出登陆</span>
+    		</a>
+		</li>
+    </ul>
+</div>
+<div id="sidebar">
+	<ul>
+		<!--<li>
+			<a href="javascript:;">
+				<i class="icon icon-home"></i> 
+				<span>系统首页</span>
+			</a>
+		</li>-->
+		<li class="submenu open">
+			<a href="javascript:;">
+				<i class="icon-tags"></i> 
+				<span>标签管理</span>
+				<span class="label">2</span>
+			</a>
+			<ul>
+				<li class="active">
+					<a href="editTag.html" name="addTagLink">新增标签</a>
+				</li>
+				<li>
+					<a href="tagLists.html">标签列表</a>
+				</li>
+			</ul>
+		</li>
+		<li class="submenu open">
+			<a href="javascript:;">
+				<i class="icon-picture"></i>
+				<span>图片管理</span> 
+				<span class="label">2</span>
+			</a>
+			<ul>
+				<li>
+					<a href="uploadImg.html">新增图片</a>
+				</li>
+				<li>
+					<a href="imgLists.html">图片列表</a>
+				</li>
+			</ul>
+		</li>
+		<li class="submenu open">
+			<a href="javascript:;">
+				<i class="icon icon-pencil"></i>
+				<span>文章管理</span> 
+				<span class="label">2</span>
+			</a>
+			<ul>
+				<li>
+					<a href="editArticle.html" name="addArticleLink">新增文章</a>
+				</li>
+				<li>
+					<a href="articleLists.html">文章列表</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript" src="/blog/js/lib/handlebars-v4.0.11.js"></script>
+<script>
+	setNavActive();
+	initUser();
+	
+	//清除记录的tagId
+	$('a[name = addTagLink]').on('click',function() {
+		clearEditId('/blog/manage/func/app/clearSession.php',1);
+	});
+	
+	//清除记录的articleId
+	$('a[name = addArticleLink]').on('click',function() {
+		clearEditId('/blog/func/app/clearSession.php',2);
+	});
+	
+	$('a[name=outLogin]').on('click',function(){
+		clearEditId('/blog/manage/func/app/clearSession.php',1);
+		clearEditId('/blog/func/app/clearSession.php',2);
+		clearEditId('/blog/func/app/clearSession.php',3);
+	});
+
+	function clearEditId(url,type){
+		$.ajaxSettings.async = false;//设置同步
+		if(type == 1 || type == 2){
+			$.post(url,{ type : type });
+		}
+		if(type == 3){
+			$.post(url,{ type : type },function(res){
+				if(res == 1){
+					location.href = '/blog/manage/login.html';
+				}
+			});
+		}
+		$.ajaxSettings.async = true;//恢复至异步
+	}
+</script>

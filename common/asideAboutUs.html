@@ -1,0 +1,57 @@
+<div class="w-300 bg-000000 c-ffffff fr">
+    <canvas id="canvas" width="150" height="150">
+        <p>您的浏览器不支持canvas标签,请升级浏览器...</p>
+    </canvas>
+    <div class="cheerBox bg-E41635">
+        <h2>指望自己，人生才能转弯</h2>
+        <p>人生有两条路，一条用心走，叫做梦想；一条用脚走，叫做现实。心走得太慢，现实会苍白；脚走得太慢，梦不会高飞。人生的精彩，总是心走得很好，而脚步刚好能跟上......</p>
+    </div>
+    <ul class="short_Title_Box" id="short_Title_Box" style="min-height: 172px;">
+        <li>
+            <a href="javascript:;" title="" target="_blank"></a>
+            <span class="line line_Left"></span>
+            <span class="line line_Right"></span>
+        </li>
+        <li>
+            <a href="" title="" target="_blank"></a>
+            <span class="line line_Left"></span>
+            <span class="line line_Right"></span>
+        </li>
+        <li>
+            <a href="" title="" target="_blank"></a>
+            <span class="line line_Left"></span>
+            <span class="line line_Right"></span>
+        </li>
+        <li>
+            <a href="" title="" target="_blank"></a>
+            <span class="line line_Left"></span>
+            <span class="line line_Right"></span>
+        </li>
+    </ul>
+    <div class="cheerBox bg-E41635 p-b-40">
+        <h2>指望自己，人生才能转弯</h2>
+        <p>不积跬步，无以至千里；不积小流，无以成江海...</p>
+    </div>
+</div>
+<script>
+    //时钟调用
+    Run();
+    setInterval(Run, 1000);
+    initRandTag();
+    function initRandTag () {
+    	$.get('/blog/func/app/initRandTag.php','',function(res){
+    		res = eval(res);
+            var tempResult = '';
+            for(var i = 0;i < res.length; i ++){
+                tempResult = res[i];
+                var aObj = $('#short_Title_Box li:eq('+ i +') a');
+                aObj.attr({
+                    'href' : '/blog/article/gossip.html?articleTag=' + tempResult.tagName,
+                    'title': tempResult.tagName
+                });
+                aObj.text(tempResult.tagName);
+            }
+            $('loading').empty();
+    	})
+    }
+</script>
